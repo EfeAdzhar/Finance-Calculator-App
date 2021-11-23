@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         self.button.frame = CGRect(x: 0, y: 0, width: 200, height: 80)
         self.button.center = self.view.center
         self.button.setTitle("Hello", for: .normal)
+        self.button.backgroundColor = .white
         self.view.addSubview(button)
     }
     
