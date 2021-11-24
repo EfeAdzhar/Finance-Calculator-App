@@ -6,26 +6,29 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    //MARK: Variables
     let account = UIButton()
     let transactions = UIButton()
     let categories = UIButton()
     //Return to View Controller
     let viewOneButton = UIButton()
     var text = UITextView()
-    
+    //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .black
+        //MARK: Function Initialization
         accountButton()
         transactionsButton()
         categoriesButton()
         returnButton()
-//        self.account.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
-//        self.transactions.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
-//        self.categories.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
+        //MARK: Targets
+        self.account.addTarget(self, action: #selector(accountButtonPressed(sender:)), for: .touchUpInside)
+        self.transactions.addTarget(self, action: #selector(transactionsButtonPressed(sender:)), for: .touchUpInside)
+        self.categories.addTarget(self, action: #selector(categoriesButtonPressed(sender:)), for: .touchUpInside)
         self.viewOneButton.addTarget(self, action: #selector(returnToViewController(sender:)), for: .touchUpInside)
     }
-    
+    //MARK: Functions
     func accountButton() {
         self.account.frame = CGRect(x: 115, y: 200, width: 200, height: 100)
         self.account.setTitle("Account", for: .normal)
@@ -53,12 +56,27 @@ class SecondViewController: UIViewController {
         self.viewOneButton.tintColor = .orange
         self.viewOneButton.backgroundColor = .systemRed
         self.view.addSubview(viewOneButton)
-        
     }
-    
+    //MARK: Button Actions
     @objc func returnToViewController(sender : UIButton) {
         if sender == self.viewOneButton {
             self.dismiss(animated: true, completion: .none)
         }
     }
+    @objc func accountButtonPressed(sender : UIButton) {
+        if sender == self.account {
+            self.present(AccountViewController(), animated: true, completion: .none)
+        }
+    }
+    @objc func transactionsButtonPressed(sender : UIButton) {
+        if sender == self.transactions {
+            self.present(TransactionViewController(), animated: true, completion: .none)
+        }
+    }
+    @objc func categoriesButtonPressed(sender : UIButton) {
+        if sender == self.categories {
+            self.present(CategoriesViewController(), animated: true, completion: .none)
+        }
+    }
+    
 }
