@@ -1,9 +1,6 @@
-//
 //  SceneDelegate.swift
 //  Financial App
-//
 //  Created by Efe on 23.11.2021.
-//
 
 import UIKit
 

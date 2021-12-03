@@ -1,6 +1,9 @@
+//
 //  AccountViewController.swift
 //  Financial App
-//  Created by Efe on 24.11.2021.
+//
+//  Created by Efe on 29.11.2021.
+//
 
 import UIKit
 
@@ -15,7 +18,6 @@ class AccountViewController: UIViewController {
         self.view.backgroundColor = .darkGray
         chooseButton()
         addButton()
-        self.add.addTarget(self, action: #selector(addButtonPressed(sender:)), for: .touchUpInside)
     }
     //MARK: Functions
     func chooseButton() {
@@ -32,9 +34,5 @@ class AccountViewController: UIViewController {
         self.add.backgroundColor = .systemBlue
         self.view.addSubview(add)
     }
-    @objc func addButtonPressed(sender : UIButton) {
-        if sender == self.add {
-            self.present(AddAccount(), animated: true, completion: .none)
-        }
-    }
+    
 }
