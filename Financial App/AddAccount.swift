@@ -84,6 +84,7 @@ class AddAccount: UIViewController {
         }
     }
 }
+
 //MARK: Text Field Delegate
 extension AddAccount : UITextFieldDelegate {
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
@@ -99,7 +100,34 @@ extension AddAccount : UITextFieldDelegate {
         }
         return true
     }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    return true
+    }
+
+   
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    return true
+        
+    }
+
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        
+    }
 }
+
 //MARK: Alerts
 extension AddAccount {
     func alertForEmail() {
