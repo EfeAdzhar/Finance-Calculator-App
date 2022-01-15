@@ -8,6 +8,7 @@ class AddAccount: UIViewController {
     let accountButton = UIButton()
     let emailLabel = UILabel()
     let passwordLabel = UILabel()
+    var timer : Timer?
 
     //MARK: View Did Load
     override func viewDidLoad() {

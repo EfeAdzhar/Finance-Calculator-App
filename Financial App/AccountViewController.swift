@@ -12,29 +12,46 @@ class AccountViewController: UIViewController {
     //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .darkGray
+        self.title = "Account"
+        backgroundColor()
         chooseButton()
         addButton()
         self.add.addTarget(self, action: #selector(addButtonPressed(sender:)), for: .touchUpInside)
     }
-    //MARK: Functions
+    //MARK: Background Color
+    func backgroundColor() {
+        let layer = CAGradientLayer()
+        layer.frame = view.bounds
+        layer.colors = [UIColor.systemPurple.cgColor, UIColor.systemGray3.cgColor]
+        self.view.layer.addSublayer(layer)
+    }
+    //MARK: Buttons
     func chooseButton() {
         self.choose.frame = CGRect(x: 115, y: 300, width: 200, height: 100)
         self.choose.setTitle("Choose", for: .normal)
         self.choose.tintColor = .red
-        self.choose.backgroundColor = .systemPink
+        self.choose.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        self.choose.layer.cornerRadius = 15
+        self.choose.backgroundColor = .systemFill
+        self.choose.layer.borderWidth = 3
+        self.choose.layer.borderColor = UIColor.black.cgColor
         self.view.addSubview(choose)
     }
     func  addButton() {
         self.add.frame = CGRect(x: 115, y: 500, width: 200, height: 100)
         self.add.setTitle("Add", for: .normal)
         self.add.tintColor = .white
-        self.add.backgroundColor = .systemBlue
+        self.add.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        self.add.layer.cornerRadius = 15
+        self.add.backgroundColor = .systemFill
+        self.add.layer.borderWidth = 3
+        self.add.layer.borderColor = UIColor.black.cgColor
         self.view.addSubview(add)
     }
+    //MARK: Add Button Pressed
     @objc func addButtonPressed(sender : UIButton) {
         if sender == self.add {
-            self.present(AddAccount(), animated: true, completion: .none)
+            self.show(AddAccount(), sender: .none)
         }
     }
 }
