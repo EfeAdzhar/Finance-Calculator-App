@@ -68,19 +68,7 @@ class SecondViewController: UIViewController {
         self.categories.layer.borderColor = UIColor.black.cgColor
         self.view.addSubview(categories)
     }
-//    func returnButton() {
-//        self.viewOneButton.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
-//        self.viewOneButton.setTitle("", for: .normal)
-//        self.viewOneButton.tintColor = .orange
-//        self.viewOneButton.backgroundColor = .systemRed
-//        self.view.addSubview(viewOneButton)
-//    }
-    //MARK: Button Actions
-//    @objc func returnToViewController(sender : UIButton) {
-//        if sender == self.viewOneButton {
-//            self.dismiss(animated: true, completion: .none)
-//        }
-//    }
+    
     @objc func accountButtonPressed(sender : UIButton) {
         if sender == self.account {
             self.show(AccountViewController(), sender: .none)
