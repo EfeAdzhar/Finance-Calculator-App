@@ -11,6 +11,7 @@
 		B4398308274E2BAC0092FE32 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4398307274E2BAC0092FE32 /* TransactionViewController.swift */; };
 		B439830A274E2C140092FE32 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4398309274E2C140092FE32 /* CategoriesViewController.swift */; };
 		B44D35C0274D68A9001490C5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44D35BF274D68A9001490C5 /* SecondViewController.swift */; };
+		B4C8D67F2793614400F26AB0 /* ChooseAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C8D67E2793614400F26AB0 /* ChooseAccountViewController.swift */; };
 		B4EABC7B274CCBC2000F9925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EABC7A274CCBC2000F9925 /* AppDelegate.swift */; };
 		B4EABC7D274CCBC2000F9925 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EABC7C274CCBC2000F9925 /* SceneDelegate.swift */; };
 		B4EABC7F274CCBC2000F9925 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EABC7E274CCBC2000F9925 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		B4398307274E2BAC0092FE32 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		B4398309274E2C140092FE32 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		B44D35BF274D68A9001490C5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		B4C8D67E2793614400F26AB0 /* ChooseAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAccountViewController.swift; sourceTree = "<group>"; };
 		B4EABC77274CCBC2000F9925 /* Financial App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Financial App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4EABC7A274CCBC2000F9925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4EABC7C274CCBC2000F9925 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				B4398307274E2BAC0092FE32 /* TransactionViewController.swift */,
 				B4398305274E2AF50092FE32 /* AccountViewController.swift */,
 				B4FE259F27555ACB00A9B08A /* AddAccount.swift */,
+				B4C8D67E2793614400F26AB0 /* ChooseAccountViewController.swift */,
 				B4EABC80274CCBC2000F9925 /* Main.storyboard */,
 				B4EABC83274CCBC4000F9925 /* Assets.xcassets */,
 				B4EABC85274CCBC4000F9925 /* LaunchScreen.storyboard */,
@@ -158,6 +161,7 @@
 				B4398306274E2AF50092FE32 /* AccountViewController.swift in Sources */,
 				B4EABC7F274CCBC2000F9925 /* ViewController.swift in Sources */,
 				B4EABC7B274CCBC2000F9925 /* AppDelegate.swift in Sources */,
+				B4C8D67F2793614400F26AB0 /* ChooseAccountViewController.swift in Sources */,
 				B439830A274E2C140092FE32 /* CategoriesViewController.swift in Sources */,
 				B4EABC7D274CCBC2000F9925 /* SceneDelegate.swift in Sources */,
 			);

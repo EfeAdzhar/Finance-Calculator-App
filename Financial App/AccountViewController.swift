@@ -16,7 +16,9 @@ class AccountViewController: UIViewController {
         backgroundColor()
         chooseButton()
         addButton()
+        //MARK: Targets
         self.add.addTarget(self, action: #selector(addButtonPressed(sender:)), for: .touchUpInside)
+        self.choose.addTarget(self, action: #selector(chooseButtonPressed(sender:)), for: .touchUpInside)
     }
     //MARK: Background Color
     func backgroundColor() {
@@ -52,6 +54,12 @@ class AccountViewController: UIViewController {
     @objc func addButtonPressed(sender : UIButton) {
         if sender == self.add {
             self.show(AddAccount(), sender: .none)
+        }
+    }
+    //MARK: Choose Button Pressed
+    @objc func chooseButtonPressed(sender : UIButton) {
+        if sender == self.choose {
+            self.show(ChooseAccountViewController(), sender: .none)
         }
     }
 }
