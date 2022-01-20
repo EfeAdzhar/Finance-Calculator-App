@@ -14,7 +14,7 @@ class AddAccount: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Background Color of View
-        self.view.backgroundColor = .systemPink
+        backgroundColor()
         //Functions
         emailTextField()
         passwordTextField()
@@ -27,23 +27,38 @@ class AddAccount: UIViewController {
         self.emailLabel.becomeFirstResponder()
         self.passwordLabel.becomeFirstResponder()
     }
+    //MARK: Background
+    func backgroundColor() {
+        let layer = CAGradientLayer()
+        layer.frame = self.view.bounds
+        layer.colors = [UIColor.systemGreen.cgColor, UIColor.systemYellow.cgColor]
+        self.view.layer.addSublayer(layer)
+    }
     
     //MARK: Creating Text Fields
     func emailTextField() {
         let textField = UITextField()
-        textField.frame = CGRect(x: 50, y: 300, width: 300, height: 30)
-        textField.placeholder = "email"
+        textField.frame = CGRect(x: 50, y: 300, width: 310, height: 40)
+        textField.placeholder = " email"
         textField.keyboardType = .emailAddress
         textField.backgroundColor = .systemBlue
+        textField.font = UIFont.boldSystemFont(ofSize: 17)
+        textField.layer.borderColor = UIColor.black.cgColor
+        textField.layer.borderWidth = 2
+        textField.layer.cornerRadius = 11
         self.view.addSubview(textField)
     }
     
     func passwordTextField() {
         let textField = UITextField()
-        textField.frame = CGRect(x: 50, y: 400, width: 300, height: 30)
-        textField.placeholder = "password"
+        textField.frame = CGRect(x: 50, y: 400, width: 310, height: 40)
+        textField.placeholder = " password"
         textField.isSecureTextEntry = true
         textField.backgroundColor = .systemBlue
+        textField.font = UIFont.boldSystemFont(ofSize: 17)
+        textField.layer.borderColor = UIColor.black.cgColor
+        textField.layer.borderWidth = 2
+        textField.layer.cornerRadius = 11
         self.view.addSubview(textField)
     }
     
@@ -52,39 +67,60 @@ class AddAccount: UIViewController {
         self.accountButton.frame = CGRect(x: 135, y: 500, width: 150, height: 60)
         self.accountButton.setTitle("Add", for: .normal)
         self.accountButton.backgroundColor = .systemBlue
+        accountButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        accountButton.layer.borderColor = UIColor.black.cgColor
+        accountButton.layer.borderWidth = 3
+        accountButton.layer.cornerRadius = 15
         self.view.addSubview(self.accountButton)
     }
     
     //MARK: Labels
     func labelEmail() {
         emailLabel.text = "Email"
-        emailLabel.frame = CGRect(x: 50, y: 250, width: 100, height: 30)
+        emailLabel.frame = CGRect(x: 50, y: 270, width: 100, height: 30)
+        emailLabel.font = UIFont.boldSystemFont(ofSize: 20)
         self.view.addSubview(emailLabel)
     }
     
     func labelPassword() {
         passwordLabel.text = "Password"
-        passwordLabel.frame = CGRect(x: 50, y: 350, width: 100, height: 30)
+        passwordLabel.frame = CGRect(x: 50, y: 370, width: 100, height: 30)
+        passwordLabel.font = UIFont.boldSystemFont(ofSize: 20)
         self.view.addSubview(passwordLabel)
     }
     
     //MARK: Add Account Button Pressed.
     @objc func addAccountButtonPressed(sender : UIButton) {
         //Not working Properly :(
-        if ((self.emailLabel.text?.isEmpty) != nil) {
+        var emailTextFieldArrayOfCharacters = [Character]()
+        var passwordFieldArrayOfCharacters = [Character]()
+        
+        //Putting All Elements of Email in Array
+        for char in emailLabel.text!{
+            emailTextFieldArrayOfCharacters.append(char)
+        }
+        //Putting All Elements of Password in Array
+        for char in passwordLabel.text! {
+            passwordFieldArrayOfCharacters.append(char)
+        }
+        //IF
+        if emailTextFieldArrayOfCharacters.isEmpty {
             alertForEmail()
             print("alertForEmail")
         }
-        if ((self.passwordLabel.text?.isEmpty) != nil) {
+        if passwordFieldArrayOfCharacters.isEmpty {
             alertForPassword()
             print("alertForPassword")
         }
-        if ((self.emailLabel.text?.isEmpty) != nil) && ((self.passwordLabel.text?.isEmpty) != nil) {
+        if  emailTextFieldArrayOfCharacters.isEmpty && passwordFieldArrayOfCharacters.isEmpty{
             alertForBoth()
             print("alertForBoth")
         }
+        if !emailTextFieldArrayOfCharacters.contains("@") && !emailTextFieldArrayOfCharacters.isEmpty {
+                alertForSymbol()
+            }
+        }
     }
-}
 
 //MARK: Text Field Delegate
 extension AddAccount : UITextFieldDelegate {
@@ -96,11 +132,12 @@ extension AddAccount : UITextFieldDelegate {
         if textField == emailLabel {
             self.emailLabel.resignFirstResponder()
         }
-        if textField == passwordLabel {
+        else if textField == passwordLabel {
             self.passwordLabel.resignFirstResponder()
         }
         return true
     }
+    
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true
@@ -110,21 +147,8 @@ extension AddAccount : UITextFieldDelegate {
     return true
     }
 
-   
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-    }
-
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        
-    }
-
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     return true
-        
-    }
-
-    func textFieldDidChangeSelection(_ textField: UITextField) {
         
     }
 }
@@ -151,4 +175,11 @@ extension AddAccount {
         alert.addAction(alertButtonOk)
         self.present(alert, animated: true, completion: .none)
     }
-}
+    func alertForSymbol() {
+        let alert = UIAlertController(title: "It's not an email", message: "Please, type your email", preferredStyle: .alert)
+        let alertButtonOk = UIAlertAction(title: "OK", style: .default, handler: .none)
+        alert.addAction(alertButtonOk)
+        self.present(alert, animated: true, completion: .none)
+    }
+    }
+

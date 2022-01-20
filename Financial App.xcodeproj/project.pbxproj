@@ -49,6 +49,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4A8763527943EF800B97561 /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				B4398305274E2AF50092FE32 /* AccountViewController.swift */,
+				B4FE259F27555ACB00A9B08A /* AddAccount.swift */,
+				B4C8D67E2793614400F26AB0 /* ChooseAccountViewController.swift */,
+			);
+			path = Accounts;
+			sourceTree = "<group>";
+		};
+		B4A8763627943FB500B97561 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B4398309274E2C140092FE32 /* CategoriesViewController.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		B4A8763727943FDC00B97561 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				B4398307274E2BAC0092FE32 /* TransactionViewController.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		B4A8763827943FF600B97561 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				B44D35BF274D68A9001490C5 /* SecondViewController.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		B4EABC6E274CCBC2000F9925 = {
 			isa = PBXGroup;
 			children = (
@@ -71,12 +105,10 @@
 				B4EABC7A274CCBC2000F9925 /* AppDelegate.swift */,
 				B4EABC7C274CCBC2000F9925 /* SceneDelegate.swift */,
 				B4EABC7E274CCBC2000F9925 /* ViewController.swift */,
-				B44D35BF274D68A9001490C5 /* SecondViewController.swift */,
-				B4398309274E2C140092FE32 /* CategoriesViewController.swift */,
-				B4398307274E2BAC0092FE32 /* TransactionViewController.swift */,
-				B4398305274E2AF50092FE32 /* AccountViewController.swift */,
-				B4FE259F27555ACB00A9B08A /* AddAccount.swift */,
-				B4C8D67E2793614400F26AB0 /* ChooseAccountViewController.swift */,
+				B4A8763827943FF600B97561 /* Menu */,
+				B4A8763627943FB500B97561 /* Categories */,
+				B4A8763527943EF800B97561 /* Accounts */,
+				B4A8763727943FDC00B97561 /* Transactions */,
 				B4EABC80274CCBC2000F9925 /* Main.storyboard */,
 				B4EABC83274CCBC4000F9925 /* Assets.xcassets */,
 				B4EABC85274CCBC4000F9925 /* LaunchScreen.storyboard */,
